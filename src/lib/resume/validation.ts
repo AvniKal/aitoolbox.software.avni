@@ -60,8 +60,7 @@ export const skillsSchema = z.object({
   skills: z.array(z.string().trim()).optional(),
 });
 
-export type SkillsValues = z.infer<typeof skillsSchema>;
-
+export type SkillsValues = z.infer<typeof skillsSchema>
 export const summarySchema = z.object({
   summary: optionalString,
 });
@@ -77,6 +76,17 @@ export const resumeSchema = z.object({
   ...summarySchema.shape,
   colorHex: optionalString,
   borderStyle: optionalString,
+
+template: z.string().default("templateA"),
+customSections: z
+  .array(
+    z.object({
+      title: z.string().min(1, "Section title is required"),
+      items: z.array(z.string().min(1, "Item cannot be empty"))
+    })
+  )
+  .default([])
+
 });
 
 export type ResumeValues = Omit<z.infer<typeof resumeSchema>, "photo"> & {
