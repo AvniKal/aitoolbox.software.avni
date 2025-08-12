@@ -11,6 +11,7 @@ import WorkExperienceForm from "./forms/WorkExperienceForm";
 import EducationForm from "./forms/EducationForm";
 import SkillsForm from "./forms/SkillsForm";
 import SummaryForm from "./forms/SummaryForm";
+import TemplateAndCustomSectionsForm from "./forms/TemplateAndCustomSectionsForm";
 import { useResume } from "@/contexts/resume-context";
 
 const steps = [
@@ -19,6 +20,7 @@ const steps = [
   { id: "education", title: "Education" },
   { id: "skills", title: "Skills" },
   { id: "summary", title: "Summary" },
+  { id:"template-custom", title: "Template & Custom Sections"},
 ];
 
 
@@ -98,6 +100,7 @@ export default function ResumeForm() {
               setResumeData={setResumeData}
             />
           )}
+          {currentStep ===5  && <TemplateAndCustomSectionsForm resumeData={resumeData} setResumeData={setResumeData} />}
           {/* Other steps will go here */}
         </div>
           <div className="text-gray-400 pt-8">

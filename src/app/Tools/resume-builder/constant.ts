@@ -42,7 +42,17 @@ export const resumeValue = {
   ],
   "summary": "Passionate software engineer with expertise in modern web technologies. Strong problem-solving skills and experience in leading development teams.",
   "colorHex": "#3b82f6",
-  "borderStyle": "rounded"
+  "borderStyle": "rounded",
+  "template": "templateA", // Or any  default template
+  "customSections": [
+    {
+      title: "Certifications",
+      items: [
+        { name: "AWS Certified Solutions Architect", year: "2022" },
+        { name: "Scrum Master Certified", year: "2021" }
+      ]
+}
+]
 }
 
 // _components/constant.ts
@@ -63,4 +73,6 @@ export const initialResumeValues: ResumeValues = {
   workExperiences: [],
   educations: [],
   skills: [],
+  template: "templateA",
+  customSections:[],
 };

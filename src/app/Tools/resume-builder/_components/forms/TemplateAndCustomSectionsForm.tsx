@@ -78,7 +78,7 @@ export default function TemplateAndCustomSectionsForm({
                     <option value="templateC">Template C</option>
                   </select>
                 </FormControl>
-                <FormMessage />
+                 <FormMessage />
               </FormItem>
             )}
           />
