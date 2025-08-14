@@ -157,6 +157,17 @@ const aiTools = [
 
 const categories = [...new Set(aiTools.map(tool => tool.category))];
 
+import ResumeBuilderForm from "@/components/ResumeBuilderForm";
+
+export default function ResumeBuilderPage() {
+  return (
+    <div className="container mx-auto py-8">
+      <h1 className="text-2xl font-bold mb-6">Resume Builder</h1>
+      <ResumeBuilderForm />
+    </div>
+  );
+}
+
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -167,6 +178,8 @@ export default function Home() {
     const matchesCategory = selectedCategory === "all" || tool.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  
 
   return (
     <div className="flex flex-col items-center min-h-auto p-4 sm:p-6">
